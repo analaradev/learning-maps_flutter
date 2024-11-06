@@ -8,7 +8,7 @@
         <!-- Agregué la etiqueta de cierre para <application> aquí -->
         
         <meta-data android:name="com.google.android.geo.API_KEY"
-                   android:value="AIzaSyAKosnBJhyjaRW3wiUlp79-JUmkUg-Ww9Y"/>
+                   android:value="AIzaSyCq8891GTKoNIqEH-NNMxRgiidHpEYjGZk"/>
         
         <activity
             android:name=".MainActivity"

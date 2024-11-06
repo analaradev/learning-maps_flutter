@@ -1,5 +1,6 @@
 import 'package:appmapa/const/ubicaciones.dart';
 import 'package:appmapa/models/ubicacion_model.dart';
+import 'package:appmapa/view/crear_camion.dart';
 import 'package:appmapa/view/map_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,13 +18,13 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(
-          Icons.park_outlined,
+          Icons.directions_bus_rounded,
           // color: Colors.white,
           size: 30,
         ),
         leadingWidth: 80,
         title: const Text(
-          'Parques',
+          'Vehículos',
           style: TextStyle(
             fontSize: 30,
             // color: Colors.white,
@@ -38,8 +39,9 @@ class _HomeViewState extends State<HomeView> {
               showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
-                  title: const Text('Salir de la aplicación'),
-                  content: const Text('¿Está seguro de que desea salir?'),
+                  title: const Text('Cerrar sesión'),
+                  content:
+                      const Text('¿Está seguro de que desea cerrar sesión?'),
                   actions: [
                     TextButton(
                       onPressed: () {
@@ -48,9 +50,7 @@ class _HomeViewState extends State<HomeView> {
                       child: const Text('Cancelar'),
                     ),
                     TextButton(
-                      onPressed: () {
-                        SystemNavigator.pop();
-                      },
+                      onPressed: () {},
                       child: const Text('Salir'),
                     ),
                   ],
@@ -92,7 +92,7 @@ class _HomeViewState extends State<HomeView> {
               },
               child: Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xFF84bc5b),
+                  color: Colors.blueAccent,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 padding: const EdgeInsets.all(20),
@@ -103,7 +103,7 @@ class _HomeViewState extends State<HomeView> {
                 child: Row(
                   children: [
                     const Icon(
-                      Icons.location_on_rounded,
+                      Icons.directions_bus_filled_rounded,
                       color: Colors.white,
                       size: 40,
                     ),
@@ -118,42 +118,55 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ),
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Alimento',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                          ),
-                        ),
-                        Text(
-                          '${ubicacion.porcentaje}%',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Column(
+                    //   crossAxisAlignment: CrossAxisAlignment.start,
+                    //   children: [
+                    //     const Text(
+                    //       'Alimento',
+                    //       style: TextStyle(
+                    //         color: Colors.white,
+                    //         fontSize: 15,
+                    //       ),
+                    //     ),
+                    //     Text(
+                    //       '${ubicacion.porcentaje}%',
+                    //       style: const TextStyle(
+                    //         color: Colors.white,
+                    //         fontSize: 25,
+                    //         fontWeight: FontWeight.bold,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                     const SizedBox(width: 10),
-                    Icon(
-                      double.parse(ubicacion.porcentaje) < 30
-                          ? Icons.sentiment_dissatisfied_rounded
-                          : double.parse(ubicacion.porcentaje) < 70
-                              ? Icons.sentiment_satisfied_alt_rounded
-                              : Icons.sentiment_very_satisfied_rounded,
-                      color: Colors.white,
-                      size: 30,
-                    ),
+                    // Icon(
+                    //   double.parse(ubicacion.porcentaje) < 30
+                    //       ? Icons.sentiment_dissatisfied_rounded
+                    //       : double.parse(ubicacion.porcentaje) < 70
+                    //           ? Icons.sentiment_satisfied_alt_rounded
+                    //           : Icons.sentiment_very_satisfied_rounded,
+                    //   color: Colors.white,
+                    //   size: 30,
+                    // ),
                   ],
                 ),
               ),
             ),
           const SizedBox(height: 10),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CrearCamion(),
+            ),
+          ).then((value) {
+            setState(() {});
+          });
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
