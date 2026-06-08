@@ -1,16 +1,24 @@
-# appmapa
+# Maps Flutter
 
-A new Flutter project.
+Repositorio de aprendizaje para practicar integracion de mapas en aplicaciones Flutter.
 
-## Getting Started
+## Objetivo
 
-This project is a starting point for a Flutter application.
+Explorar el uso de mapas, ubicaciones y componentes relacionados con geolocalizacion dentro de una aplicacion movil.
 
-A few resources to get you started if this is your first Flutter project:
+## Tecnologias
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter
+- Dart
+- Mapas y geolocalizacion
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Practicas incluidas
+
+- Visualizacion de mapas
+- Manejo de componentes de ubicacion
+- Navegacion e interfaces moviles
+- Exploracion de funcionalidades basadas en posicion
+
+## Contexto
+
+Proyecto de practica personal para ampliar habilidades en Flutter y desarrollo de aplicaciones con mapas.
